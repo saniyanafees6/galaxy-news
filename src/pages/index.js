@@ -1,21 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import HPLayout from "../components/HPLayout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
+  <HPLayout className="home">
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+    {/* <Image style="opacity:0.3,"/> */}
+    <header >
+      <h1 className="main-heading">The Galaxy Times</h1>
+      <h3 className="secondary">Coded and Designed by Saniya Nafees</h3>
+    </header>
+  </HPLayout>
 )
 
 export default IndexPage

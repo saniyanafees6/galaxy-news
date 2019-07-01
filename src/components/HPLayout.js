@@ -1,5 +1,5 @@
 /**
- * Layout component that queries for data
+ * HPLayout component that queries for data
  * with Gatsby's useStaticQuery component
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
@@ -11,50 +11,42 @@ import { useStaticQuery, graphql } from "gatsby"
 import Menu from "./menu"
 
 import Header from "./header"
-import "./layout.css"
+import "./Layout.css"
 import { relative } from "path";
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const HPLayout = ({ children }) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <nav>
-          <Menu />
-          </nav>
       <div
         style={{
           margin: `0 auto`,
           maxWidth: 2000,
           padding: `0px`,
           paddingTop: 0,
-         background: 'white',
-          // top: '0',
-          // width: '100%',
-          // zIndex:-2,
+          background: 'linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)) 50% no-repeat,#000 url(https://images2.alphacoders.com/594/594261.jpg) 50% no-repeat',
+          backgroundSize: 'cover,cover',
+          height: '100vh',
+          position: 'absolute',
+          top: '0',
+          width: '100%',
+          zIndex:-2,
         }}
       >
                 <div
           style={{
             margin: `0 auto`,
             maxWidth: 2000,
-            padding: `2rem`,
+            padding: `0px`,
             paddingTop: 0,
             position:relative,
           }}
         >
           
           <main>
-          
+          <nav>
+          <Menu />
+          </nav>
             {children}
           </main>
         </div>
@@ -69,8 +61,8 @@ const Layout = ({ children }) => {
   )
 }
 
-Layout.propTypes = {
+HPLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default HPLayout
